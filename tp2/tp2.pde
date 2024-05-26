@@ -4,21 +4,15 @@
 
 PImage fondoinicio, fondoT, fondoN, fondoZ, fondoI, fondoU, fondoL;
 PImage Logo, Tanjiro, Nezuko, Zenitsu, Inosuke, Tengen, Lunas;
-
-int py;
-int px;
-int pylogo;
-int pxfondo1;
-int pxfondo2;
-int pyT, pyN, pyZ, pyI, pyU, pyL;
-
+int pyT, pyN, pyZ, pyI, pyU, pyL, py, pylogo, pxfondo1;
 PFont fuenteJ;
 PFont fuentechica;
 String texto1, textT, textoN, textZ, textI, textU, textL;
 
 void setup() {
   size (640, 480);
-  pylogo = -1000;
+  
+  pylogo = -400;
   py = 850;
   pxfondo1 = -400;
   pyT = 500;
@@ -27,7 +21,7 @@ void setup() {
   pyI = 500;
   pyU = 500;
   pyL = 500;
-  pxfondo2 = 1150;
+  
   fondoinicio = loadImage("fondo.jpg");
   fondoT = loadImage("fondoTanjiro.jpg");
   fondoN = loadImage("fondoNezuko.jpg");
@@ -52,7 +46,7 @@ void setup() {
   Tengen = loadImage("tengen.png");
   textU = "Uzui Tengen\n fue un personaje secundario\n importante en Kimetsu no\nYaiba.\n \n Tengen fue un Cazador de\ndemonios y el antigui Pilar\ndel sonido del Cuerpo de\nExterminio de Demonios";
   Lunas = loadImage("lunas.png");
-  textL = "Daki y Gyutaro\n Daki era la unica hermana\ny pariente con vida de Gyutaro\n tras el fallecimiento\n de\nsu madre.\n \nLas acciones de ambos los llevó\na tener un final fatal donde\nterminarían por conocer\na Doma quien los convertiría\nen demonios para que\nsobrevivieran.";
+  textL = "Daki y Gyutaro\n Daki era la unica hermana\ny pariente con vida de\nGyutaro tras el\nfallecimiento de su madre.\n \nLas acciones de ambos los\nllevó a tener un final fatal\ndonde terminarían por\nconocer a Doma quien los\nconvertiría en demonios\nara que sobrevivieran.";
   
 }
 
@@ -66,30 +60,31 @@ void draw() {
     pxfondo1 ++;
     }
   }
-  
+  if (frameCount/50>=4){
   image(Logo, 170, pylogo, 300, 300);
   if(pylogo<50){
     pylogo ++;
+    }
   }
   
   fill(0);
   textFont(fuenteJ);
   textAlign(CENTER);
-  if (frameCount/50>=0){
+  if (frameCount/50>=5){
   text(texto1, 315, py);
     if (py>400){
     py --;
     }
   }
   
-  if (frameCount/50>=10){
+  if (frameCount/50>=15){
   fill(0);
   rect(0, 0, 640, 480);
   }
   
   
   //2DA PANTALLA
-  if (frameCount/50>=10){
+  if (frameCount/50>=15){
   image (fondoT, 300, -92, 400, 700);
   image(Tanjiro, 100, -150, 707, 1040);
   fill(255);
@@ -100,125 +95,95 @@ void draw() {
     pyT--;
     }
   }
-  
-  
-  if (frameCount/50>=20){
+  if (frameCount/50>=23){
   fill(0);
   rect(0, 0, 640, 480);
   }
   
   //3RA PANTALLA
-  if (frameCount/50>=20) {
+  if (frameCount/50>=23) {
   image (fondoN, -20, 0, 380, 480);
-  }
-  if (pxfondo1<0) {
-    pxfondo1 ++;
-  }
-   if (frameCount/50>=20) {
   image(Nezuko, -190, 100, 715, 823);
-   }
   fill(255);
   textFont(fuentechica);
   textAlign(CENTER);
-  if(frameCount/50>=20){
-  text(textoN, 500, pyT);
+  text(textoN, 500, pyN);
     if(pyN>150){
-    pyT--;
+    pyN--;
     }
   }
-   if (frameCount/50>=30){
+   if (frameCount/50>=35){
   fill(0);
   rect(0, 0, 640, 480);
    }
   
    //4TA PANTALLA
-  if(frameCount/50>=30) {
+  if(frameCount/50>=35) {
    image(fondoZ, 270, 0, 460, 658);
-  }
-  if (frameCount/50>=30) {
-  image(Zenitsu, 150, -100, 630, 950);
-  }
-  fill(255);
-  textFont(fuentechica);
-  textAlign(CENTER);
-  if(frameCount/50>=30){
-  text(textZ, 130, pyT);
-    if(pyT>150){
-    pyT--;
+   image(Zenitsu, 150, -100, 630, 950);
+   fill(255);
+   textFont(fuentechica);
+   textAlign(CENTER);
+   text(textZ, 130, pyZ);
+    if(pyZ>150){
+     pyZ --;
     }
-  }
+   }
   
-  if (frameCount/50>=40){
+  
+  if (frameCount/50>=47){
   fill(0);
   rect(0, 0, 640, 480);
    }
    
   //5TA PANTALLA
-  if(frameCount/50>=40) {
+  if(frameCount/50>=47) {
    image(fondoI, -20, 0, 420, 480);
-  }
-  if (frameCount/50>=40) {
-  image(Inosuke, -70, -130, 580, 880);
-  }
+   image(Inosuke, -70, -130, 580, 880);
    fill(255);
-  textFont(fuentechica);
-  textAlign(CENTER);
-  if(frameCount/50>=40){
-  text(textI, 500, pyT);
-    if(pyT>150){
-    pyT--;
+   textFont(fuentechica);
+   textAlign(CENTER);
+   text(textI, 510, pyI);
+    if(pyI>150){
+     pyI--;
     }
   }
-
-  
-  if (frameCount/50>=50){
+  if (frameCount/50>=59){
   fill(0);
   rect(0, 0, 640, 480);
   }
   
   //6TA PANTALLA
-  if(frameCount/50>=50) {
+  if(frameCount/50>=59) {
    image(fondoU, 270, 0, 500, 515);
-  }
-  if (frameCount/50>=50) {
   image(Tengen, 270, 80, 400, 540);
-  }
   fill(255);
   textFont(fuentechica);
   textAlign(CENTER);
-  if(frameCount/50>=50){
-  text(textU, 130, pyT);
-    if(pyT>150){
-      pyT --;
+  text(textU, 130, pyU);
+    if(pyU>150){
+      pyU --;
     }
   }
   
-  if (frameCount/50>=60){
+  if (frameCount/50>=71){
   fill(0);
   rect(0, 0, 640, 480);
   }
   
   //7MA PANTALLA
-  if(frameCount/50>=60) {
-   image(fondoL, -30, 0, 420, 480);
+  if(frameCount/50>=71) {
+   image(fondoL, -30, 0, 420, 500);
+   image(Lunas, 0, 20, 390, 550);
+   fill(255);
+   textFont(fuentechica);
+   textAlign(CENTER);
+    text(textL, 500, pyL);
+     if(pyL>150){
+       pyL --;
+   }
   }
-  if (frameCount/50>=60) {
-  image(Lunas, 0, 0, 390, pyT);
-    if(pyT>150){
-    pyT --;
-    }
-  fill(255);
-  textFont(fuentechica);
-  textAlign(CENTER);
-  if(frameCount/50>=60){
-  text(textL, 500, pyT);
-    if(pyT>150){
-      pyT --;
-    }
-  }
-    
-  }
-  if (frameCount/50>=70){
+  if (frameCount/50>=83){
   fill(0);
   rect(0, 0, 640, 480);
   }
