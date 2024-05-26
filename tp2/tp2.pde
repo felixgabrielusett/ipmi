@@ -46,7 +46,7 @@ void setup() {
   Tengen = loadImage("tengen.png");
   textU = "Uzui Tengen\n fue un personaje secundario\n importante en Kimetsu no\nYaiba.\n \n Tengen fue un Cazador de\ndemonios y el antiguo Pilar\ndel sonido del Cuerpo de\nExterminio de Demonios";
   Lunas = loadImage("lunas.png");
-  textL = "Daki y Gyutaro\n Daki era la unica hermana\ny pariente con vida de\nGyutaro tras el\nfallecimiento de su madre.\n \nLas acciones de ambos los\nllevó a tener un final fatal\ndonde terminarían por\nconocer a Doma quien los\nconvertiría en demonios\nara que sobrevivieran.";
+  textL = "Daki y Gyutaro\n Daki era la unica hermana\ny pariente con vida de\nGyutaro tras el\nfallecimiento de su madre.\n \nLas acciones de ambos los\nllevó a tener un final fatal\ndonde terminarían por\nconocer a Doma quien los\nconvertiría en demonios\npara que sobrevivieran.";
   
 }
 
