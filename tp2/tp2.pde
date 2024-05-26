@@ -5,11 +5,6 @@
 PImage fondoinicio, fondoT, fondoN, fondoZ, fondoI, fondoU, fondoL;
 PImage Logo, Tanjiro, Nezuko, Zenitsu, Inosuke, Tengen, Lunas;
 
-/*FALTA
-- textos con movimiento
-- boton al final para reiniciar la presentacion
-- si se llega antes de la entrega, sumar animacion a los png de personajes*/
-
 int py;
 int px;
 int pylogo;
